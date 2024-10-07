@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-page" class="page">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/214/517/small_2x/abstract-geometric-logo-or-infinity-line-logo-for-your-company-free-vector.jpg" alt="Logo" class="logo" style="display: block; margin: 0 auto 20px; width: 80%;">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button onclick="login()">Login</button>
+        <div id="login-error" class="error"></div>
+    </div>
+
+    <div id="admin-dashboard" class="dashboard" style="display: none;">
+        <h1>Admin Dashboard</h1>
+        <button onclick="showEmployeeSettings()">Employee Settings</button>
+        <button onclick="viewLeaveRequests()">View Leave Requests</button>
+        <button onclick="assignTask()">Assign Task</button>
+        <button onclick="logout()">Logout</button>
+        <div id="admin-content"></div>
+    </div>
+
+    <div id="employee-dashboard" class="dashboard" style="display: none;">
+        <h1>Employee Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+        <div>
+            <h2>Your Tasks</h2>
+            <ul id="employee-task-list"></ul>
+        </div>
+        <div>
+            <h2>Submit Work Report</h2>
+            <textarea id="work-report" placeholder="Enter your report..." required></textarea>
+            <button onclick="submitReport()">Submit</button>
+            <div id="report-status"></div>
+        </div>
+        <div>
+            <h2>Request Leave</h2>
+            <input type="date" id="leave-start" required>
+            <input type="date" id="leave-end" required>
+            <button onclick="requestLeave()">Request Leave</button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
